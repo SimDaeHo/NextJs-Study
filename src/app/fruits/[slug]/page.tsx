@@ -5,5 +5,5 @@ type Props = {
 };
 
 export default function bananaPage({ params }: Props) {
-  return <h1>바나나 설명 페이지!</h1>;
+  return <h1>{params.slug} 설명 페이지!</h1>;
 }
