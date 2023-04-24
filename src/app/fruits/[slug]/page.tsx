@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 type Props = {
   params: {
     slug: string;
@@ -5,6 +7,9 @@ type Props = {
 };
 
 export default function bananaPage({ params }: Props) {
+  if (params.slug === "nothing") {
+    notFound();
+  }
   return <h1>{params.slug} 설명 페이지!</h1>;
 }
 
