@@ -1,4 +1,5 @@
 import "./globals.css";
+import styles from "./layout.module.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,9 +10,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       */}
       <head />
       <body>
-        <header>
+        <header className={styles.header}>
           <h1>Daeho Memo</h1>
-          <nav>
+          <nav className={styles.nav}>
             <a href="">Apple</a>
             <a href="">Banana</a>
           </nav>
