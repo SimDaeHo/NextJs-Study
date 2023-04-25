@@ -14,8 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className={styles.header}>
           <h1>Daeho Memo</h1>
           <nav className={styles.nav}>
+            <Link href="/fruits">Fruits</Link>
             <Link href="/apple">Apple</Link>
-            <Link href="banana">Banana</Link>
+            <Link href="/banana">Banana</Link>
           </nav>
         </header>
         {children}
