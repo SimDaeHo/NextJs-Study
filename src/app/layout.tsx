@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./globals.css";
 import styles from "./layout.module.css";
 
@@ -13,8 +14,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className={styles.header}>
           <h1>Daeho Memo</h1>
           <nav className={styles.nav}>
-            <a href="">Apple</a>
-            <a href="">Banana</a>
+            <Link href="/apple">Apple</Link>
+            <Link href="banana">Banana</Link>
           </nav>
         </header>
         {children}
