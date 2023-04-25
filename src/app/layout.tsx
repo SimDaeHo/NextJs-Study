@@ -16,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href="">Banana</a>
           </nav>
         </header>
+        {children}
       </body>
     </html>
   );
