@@ -6,6 +6,11 @@ type Props = {
   };
 };
 
+export function generateMetadata({ params }: Props) {
+  return {
+    title: `과일의 이름:${params.slug}`,
+  };
+}
 export default function bananaPage({ params }: Props) {
   if (params.slug === "nothing") {
     notFound();
