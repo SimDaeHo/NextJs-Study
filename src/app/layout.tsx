@@ -2,6 +2,11 @@ import Link from "next/link";
 import "./globals.css";
 import styles from "./layout.module.css";
 
+export const metadata = {
+  title: "맛있는 과일 정보 사이트",
+  description: "맛있는 과일을 판매하는 곳입니다.",
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
