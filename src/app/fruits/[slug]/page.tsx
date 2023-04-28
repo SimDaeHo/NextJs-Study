@@ -21,9 +21,9 @@ export default function bananaPage({ params: { slug } }: Props) {
   return <h1>{fruit} 설명 페이지!</h1>;
 }
 
-export function generateStaticParams() {
-  const fruits = getFruits();
+export async function generateStaticParams() {
+  const fruits = await getFruits();
   return fruits.map((fruits) => ({
-    slug: fruits,
+    slug: fruits.id,
   }));
 }
