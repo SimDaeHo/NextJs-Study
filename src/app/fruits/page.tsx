@@ -2,11 +2,13 @@ import Link from "next/link";
 import styles from "./layout.module.css";
 import { getFruits } from "@/service/Fruits";
 
-export const revalidate = 3;
+// export const revalidate = 3;
 
 export default async function FruitsPage() {
   const fruits = await getFruits();
-  const res = await fetch("https://api.quotable.io/random");
+  const res = await fetch("https://api.quotable.io/random", {
+    next: { revalidate: 3 },
+  });
   const data = await res.json();
   const ranDom = data.content;
   return (
