@@ -1,16 +1,13 @@
 import Link from "next/link";
 import styles from "./layout.module.css";
 import { getFruits } from "@/service/Fruits";
+import Content from "@/components/Content";
 
 // export const revalidate = 3;
 
 export default async function FruitsPage() {
   const fruits = await getFruits();
-  const res = await fetch("https://api.quotable.io/random", {
-    next: { revalidate: 0 },
-  });
-  const data = await res.json();
-  const ranDom = data.content;
+
   return (
     <>
       <h1>과일소개 페이지!</h1>
@@ -21,7 +18,7 @@ export default async function FruitsPage() {
           </li>
         ))}
       </ul>
-      <article className={styles.article}>{ranDom}</article>
+      <Content />
     </>
   );
 }
