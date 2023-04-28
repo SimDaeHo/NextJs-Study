@@ -12,13 +12,13 @@ export function generateMetadata({ params }: Props) {
     title: `과일의 이름:${params.slug}`,
   };
 }
-export default function bananaPage({ params: { slug } }: Props) {
-  const fruit = getFruit(slug);
+export default async function FruitPage({ params: { slug } }: Props) {
+  const fruit = await getFruit(slug);
 
   if (!fruit) {
     notFound();
   }
-  return <h1>{fruit} 설명 페이지!</h1>;
+  return <h1>{fruit.name} 설명 페이지!</h1>;
 }
 
 export async function generateStaticParams() {

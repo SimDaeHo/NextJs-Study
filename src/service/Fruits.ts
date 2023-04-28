@@ -13,6 +13,7 @@ export async function getFruits(): Promise<Fruits[]> {
   return JSON.parse(data);
 }
 
-export function getFruit(id: string) {
-  return "orange";
+export async function getFruit(id: string): Promise<Fruits | undefined> {
+  const fruits = await getFruits();
+  return fruits.find((item) => item.id === id);
 }
