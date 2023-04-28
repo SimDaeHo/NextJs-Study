@@ -19,7 +19,7 @@ export default async function FruitsPage() {
           </li>
         ))}
       </ul>
-      <article>{ranDom}</article>
+      <article className={styles.article}>{ranDom}</article>
     </>
   );
 }
