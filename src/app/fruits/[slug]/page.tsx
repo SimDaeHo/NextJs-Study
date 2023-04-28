@@ -1,3 +1,4 @@
+import { getFruit, getFruits } from "@/service/Fruits";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -11,15 +12,17 @@ export function generateMetadata({ params }: Props) {
     title: `과일의 이름:${params.slug}`,
   };
 }
-export default function bananaPage({ params }: Props) {
-  if (params.slug === "nothing") {
+export default function bananaPage({ params: { slug } }: Props) {
+  const fruit = getFruit(slug);
+
+  if (!fruit) {
     notFound();
   }
-  return <h1>{params.slug} 설명 페이지!</h1>;
+  return <h1>{fruit} 설명 페이지!</h1>;
 }
 
 export function generateStaticParams() {
-  const fruits = ["apple", "banana"];
+  const fruits = getFruits();
   return fruits.map((fruits) => ({
     slug: fruits,
   }));

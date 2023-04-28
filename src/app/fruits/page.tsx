@@ -1,9 +1,9 @@
 import Link from "next/link";
 import styles from "./layout.module.css";
-
-const fruits = ["orange", "melon", "peach", "lemon"];
+import { getFruits } from "@/service/Fruits";
 
 export default function FruitsPage() {
+  const fruits = getFruits();
   return (
     <>
       <h1>과일소개 페이지!</h1>
