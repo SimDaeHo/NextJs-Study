@@ -6,6 +6,9 @@ export const revalidate = 3;
 
 export default async function FruitsPage() {
   const fruits = await getFruits();
+  const res = await fetch("https://api.quotable.io/random");
+  const data = await res.json();
+  const ranDom = data.content;
   return (
     <>
       <h1>과일소개 페이지!</h1>
@@ -16,6 +19,7 @@ export default async function FruitsPage() {
           </li>
         ))}
       </ul>
+      <article>{ranDom}</article>
     </>
   );
 }
