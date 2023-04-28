@@ -7,7 +7,7 @@ import { getFruits } from "@/service/Fruits";
 export default async function FruitsPage() {
   const fruits = await getFruits();
   const res = await fetch("https://api.quotable.io/random", {
-    next: { revalidate: 3 },
+    next: { revalidate: 0 },
   });
   const data = await res.json();
   const ranDom = data.content;
