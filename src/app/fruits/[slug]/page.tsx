@@ -1,6 +1,8 @@
 import { getFruit, getFruits } from "@/service/Fruits";
 import { notFound } from "next/navigation";
 
+export const revalidate = 3;
+
 type Props = {
   params: {
     slug: string;

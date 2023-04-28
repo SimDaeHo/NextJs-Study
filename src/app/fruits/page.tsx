@@ -2,6 +2,8 @@ import Link from "next/link";
 import styles from "./layout.module.css";
 import { getFruits } from "@/service/Fruits";
 
+export const revalidate = 3;
+
 export default async function FruitsPage() {
   const fruits = await getFruits();
   return (
