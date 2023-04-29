@@ -1,4 +1,5 @@
 import { getFruit, getFruits } from "@/service/Fruits";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 export const revalidate = 3;
@@ -20,7 +21,12 @@ export default async function FruitPage({ params: { slug } }: Props) {
   if (!fruit) {
     notFound();
   }
-  return <h1>{fruit.name} 설명 페이지!</h1>;
+  return (
+    <>
+      <h1>{fruit.name} 설명 페이지!</h1>
+      <Image src={`/images/${fruit.image}`} alt={fruit.name} width={300} height={300} />
+    </>
+  );
 }
 
 export async function generateStaticParams() {

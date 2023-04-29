@@ -5,6 +5,7 @@ export type Fruits = {
   id: string;
   name: string;
   price: string;
+  image: string;
 };
 
 export async function getFruits(): Promise<Fruits[]> {

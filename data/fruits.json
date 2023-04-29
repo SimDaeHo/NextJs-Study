@@ -2,16 +2,19 @@
   {
     "id": "1234",
     "name": "사과",
-    "price": "6000"
+    "price": "6000",
+    "image": "apple.jpg"
   },
   {
     "id": "1235",
     "name": "복숭아",
-    "price": "6000"
+    "price": "6000",
+    "image": "peach.jpg"
   },
   {
     "id": "1236",
     "name": "레몬",
-    "price": "6000"
+    "price": "6000",
+    "image": "lemon.jpg"
   }
 ]
