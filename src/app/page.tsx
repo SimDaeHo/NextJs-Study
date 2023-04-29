@@ -15,6 +15,7 @@ export default function Home() {
     <>
       <h1>홈페이지다!!</h1>
       <Counter />
+      <Image src="https://img.freepik.com/premium-photo/red-apples-isolated-white-background-ripe-fresh-apples-clipping-path-apple-with-leaf_299651-595.jpg?w=826" alt="apple" width={400} height={400} />
     </>
   );
 }
