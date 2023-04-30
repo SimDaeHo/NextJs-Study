@@ -1,6 +1,6 @@
 import { getFruit, getFruits } from "@/service/Fruits";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 export const revalidate = 3;
 
@@ -19,7 +19,8 @@ export default async function FruitPage({ params: { slug } }: Props) {
   const fruit = await getFruit(slug);
 
   if (!fruit) {
-    notFound();
+    redirect("/fruits");
+    // notFound();
   }
   return (
     <>
