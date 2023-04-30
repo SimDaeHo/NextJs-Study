@@ -20,6 +20,18 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/daeho",
+        destination: "/about/me/daeho",
+      },
+      {
+        source: "/items/:slug",
+        destination: "/fruits/:slug",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
