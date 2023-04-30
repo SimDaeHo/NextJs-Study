@@ -7,3 +7,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("fruits", request.url));
   }
 }
+
+export const config = {
+  matcher: ["/fruits/:path*"],
+};
